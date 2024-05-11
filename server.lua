@@ -1,4 +1,4 @@
-webhook = ""    --Hier den Webhook einfügen!
+webhook = ""    --Here you need to enter your webhook.
 
 local function hasAlreadyRedeemed(identifier)
     local row = MySQL.scalar.await('SELECT identifier FROM redeemed_users WHERE identifier = ?', { identifier })
@@ -38,8 +38,8 @@ function webhook2(url, identifier, text, username, playername)
     if url = "" then return end
         local embed = {
             {
-                ["color"] = 1127128,                   -- Hier die Farbe des Webhooks einfügen!
-                ["title"] = "TikTok Command Webhook",  -- Hier die Titel überschrift hinzufügen!
+                ["color"] = 1127128,                   -- Here you can change the Color for the Webhook
+                ["title"] = "TikTok Command Webhook",  -- Here you can change the title for the webhook
                 ["description"] = text, 
                 ["footer"] = {
                     ["text"] = "Wurde ausgeführt am: " .. os.date("%y/%m/%d %X") .. " von " .. playername .. " | " .. identifier
